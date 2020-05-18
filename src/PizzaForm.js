@@ -1,17 +1,23 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 
 const formSchema = yup.object().shape({
   name: yup.string().required("Name is a required field"),
+  sizes: yup.string(),
+  pepperoni: yup.boolean().oneOf([true])
 });
 
 function PizzaForm() {
   const [formState, setFormState] = useState({
     name: "",
+    sizes: "",
+    pepperoni: "",
   });
   const [errorState, setErrorState] = useState({
     name: "",
+    sizes: "",
+    pepperoni: "",
   });
   const validate = (e) => {
     yup
@@ -51,7 +57,7 @@ function PizzaForm() {
   };
 
   return (
-    <form className="pizza-form" onSubmit={formSubmit} >
+    <form className="pizza-form" onSubmit={formSubmit}>
       <div className="home-button">
         <Link to="/">
           <button>Home</button>
@@ -75,7 +81,7 @@ function PizzaForm() {
       <label htmlFor="sizes">
         Size:
         <br></br>
-        <select value={"Turkey"} name="sizes" id="sizes" onChange={"Turkey"}>
+        <select name="sizes" id="sizes" onChange={inputChange}>
           <option value="Small">Small</option>
           <option value="Medium">Medium</option>
           <option value="Large">Large</option>
@@ -89,18 +95,18 @@ function PizzaForm() {
       <br></br>
       <label>Toppings:</label>
       <br></br>
-      <label htmlFor="Pepperoni">
+      <label htmlFor="pepperoni">
         <input
           type="checkbox"
-          id="Pepperoni"
-          name="Pepperoni"
-          //   checked={formState.terms}
-          //   onChange={inputChange}
+          id="pepperoni"
+          name="pepperoni"
+          checked={formState.pepperoni}
+          onChange={inputChange}
         />
         Pepperoni
-        {/* {errorState.terms.length > 0 ? (
-          <p className="error">{errorState.terms}</p>
-        ) : null} */}
+        {errorState.pepperoni.length > 0 ? (
+          <p className="error">{errorState.pepperoni}</p>
+        ) : null}
       </label>
       <label htmlFor="Jalapenos">
         <input
