@@ -1,16 +1,21 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 function PizzaForm() {
-//     const [formState, setFormState] = useState(
-//       name: "",
-//       size: "",
-        // toppings: "",
-      
+  //     const [formState, setFormState] = useState(
+  //       name: "",
+  //       size: "",
+  // toppings: "",
 
-//   );
+  //   );
 
   return (
     <form className="pizza-form">
+      <div>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+      </div>
+
       <label className="name-form" htmlFor="name">
         Name:
         <br></br>

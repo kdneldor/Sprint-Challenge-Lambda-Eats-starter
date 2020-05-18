@@ -1,17 +1,16 @@
 import React from "react";
-import { useHistory } from "react-dom";
+import {Link} from "react-router-dom";
 
 function Home(props) {
   console.log(props);
-  const history = useHistory();
+//   const history = useHistory();
   return (
     <div className="home-wrapper">
-      <button
-        className="md-button shop-button"
-        onClick={() => history.push("/items")}
-      >
-        Shop now!
-      </button>
+      <h1>Welcome to Lambda Eats!</h1>
+      <p>The best pie in town! Probably!</p>
+      <Link to="/pizza">
+          <button>Create your Pizza!</button>
+      </Link>
     </div>
   );
 }

@@ -1,17 +1,16 @@
 import React from "react";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import PizzaForm from "./PizzaForm";
 import Home from "./Home";
 
 const App = () => {
   return (
-    <>
-      <h1>Welcome to Lambda Eats!</h1>
-      <p>The best pie in town! Probably!</p>
-
-      <Home />
-
-      <PizzaForm />
-    </>
+    <div>
+      <Route exact path='/'>
+        <Home />
+      </Route>
+      <Route path="/pizza" component={PizzaForm} />
+    </div>
   );
 };
 export default App;
