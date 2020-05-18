@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 function PizzaForm() {
   //     const [formState, setFormState] = useState(
   //       name: "",
@@ -10,7 +10,7 @@ function PizzaForm() {
 
   return (
     <form className="pizza-form">
-      <div>
+      <div className="home-button">
         <Link to="/">
           <button>Home</button>
         </Link>
