@@ -25,7 +25,7 @@ const App = () => {
         <Home />
       </Route>
       <Route path="/pizza" component={PizzaForm} />
-      <PizzaForm addPizza={addPizza} order={pizzas} />
+      <PizzaForm addPizza={addPizza} order={pizzas} /> 
     </div>
   );
 };

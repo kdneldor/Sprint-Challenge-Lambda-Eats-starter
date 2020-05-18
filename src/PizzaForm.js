@@ -68,7 +68,8 @@ function PizzaForm(props) {
       })
       .catch((err) => console.log(err));
   };
-// console.log(addPizza)
+console.log(props.addPizza)
+console.log(props)
   return (
     <form className="pizza-form" onSubmit={formSubmit}>
       <div className="home-button">
