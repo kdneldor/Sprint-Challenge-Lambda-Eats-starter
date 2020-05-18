@@ -2,8 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 function Home(props) {
-  console.log(props);
-//   const history = useHistory();
+
   return (
     <div className="home-wrapper">
       <h1>Welcome to Lambda Eats!</h1>

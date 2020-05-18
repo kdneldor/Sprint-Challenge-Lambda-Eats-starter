@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 
@@ -6,7 +6,7 @@ const formSchema = yup.object().shape({
   name: yup.string().required("Name is a required field"),
 });
 
-function PizzaForm(props) {
+function PizzaForm() {
   const [formState, setFormState] = useState({
     name: "",
   });
@@ -51,7 +51,7 @@ function PizzaForm(props) {
   };
 
   return (
-    <form className="pizza-form" >
+    <form className="pizza-form" onSubmit={formSubmit} >
       <div className="home-button">
         <Link to="/">
           <button>Home</button>
@@ -67,7 +67,7 @@ function PizzaForm(props) {
           id="name"
           placeholder="Name"
           value={formState.name}
-        //   onChange={inputChange}
+          onChange={inputChange}
         ></input>
       </label>
       <br></br>
