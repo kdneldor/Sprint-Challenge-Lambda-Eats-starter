@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import PizzaForm from "./PizzaForm";
 import Home from "./Home";
 
-const App = () => {
+const App = (props) => {
   const [pizzas, setPizzas] = useState([]);
 
   const addPizza = (pizza) => {
@@ -24,9 +24,13 @@ const App = () => {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/pizza" component={PizzaForm} />
-      <PizzaForm addPizza={addPizza} order={pizzas} /> 
+      <Route path="/pizza">
+        <PizzaForm addPizza={addPizza} order={pizzas} />
+      </Route>
+      
+      
     </div>
   );
 };
 export default App;
+

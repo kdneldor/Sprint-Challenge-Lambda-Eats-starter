@@ -64,12 +64,12 @@ function PizzaForm(props) {
       .post("https://reqres.in/api/pizzas", formState)
       .then((response) => {
         console.log(props.addPizza);
-        props.addPizza(response.data);
+        props.addPizza();
       })
       .catch((err) => console.log(err));
   };
-console.log(props.addPizza)
-console.log(props)
+  console.log(props.addPizza);
+  console.log(props);
   return (
     <form className="pizza-form" onSubmit={formSubmit}>
       <div className="home-button">
