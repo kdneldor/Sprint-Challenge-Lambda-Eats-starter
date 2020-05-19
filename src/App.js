@@ -7,18 +7,10 @@ const App = (props) => {
   const [pizzas, setPizzas] = useState([]);
 
   const addPizza = (pizza) => {
-    const newPizza = {
-      name: pizza.name,
-      sizes: pizza.sizes,
-      pepperoni: false,
-      jalapenos: false,
-      mushrooms: false,
-      olives: false,
-      instructions: pizza.instructions,
-    };
-    setPizzas([...pizzas, newPizza]);
+    
+    setPizzas([...pizzas, pizza]);
   };
-  console.log(addPizza);
+  
   return (
     <div>
       <Route exact path="/">
@@ -28,9 +20,7 @@ const App = (props) => {
         <PizzaForm addPizza={addPizza} order={pizzas} />
       </Route>
       
-      
     </div>
   );
 };
 export default App;
-

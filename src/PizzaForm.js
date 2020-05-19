@@ -4,7 +4,7 @@ import * as yup from "yup";
 import axios from "axios";
 
 const formSchema = yup.object().shape({
-  name: yup.string().required("Name is a required field"),
+  name: yup.string().min(2).required("Name is a required field"),
   sizes: yup.string().required("You must pick a size"),
   pepperoni: yup.boolean().oneOf([true]),
   jalapenos: yup.boolean().oneOf([true]),
@@ -63,13 +63,11 @@ function PizzaForm(props) {
     axios
       .post("https://reqres.in/api/pizzas", formState)
       .then((response) => {
-        console.log(props.addPizza);
-        props.addPizza();
+        props.addPizza(response.data)
       })
       .catch((err) => console.log(err));
   };
-  console.log(props.addPizza);
-  console.log(props);
+  // console.log(addPizza)
   return (
     <form className="pizza-form" onSubmit={formSubmit}>
       <div className="home-button">
