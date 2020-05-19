@@ -7,10 +7,9 @@ const App = (props) => {
   const [pizzas, setPizzas] = useState([]);
 
   const addPizza = (pizza) => {
-    
     setPizzas([...pizzas, pizza]);
   };
-  
+
   return (
     <div>
       <Route exact path="/">
@@ -19,7 +18,6 @@ const App = (props) => {
       <Route path="/pizza">
         <PizzaForm addPizza={addPizza} order={pizzas} />
       </Route>
-      
     </div>
   );
 };

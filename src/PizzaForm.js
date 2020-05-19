@@ -63,7 +63,7 @@ function PizzaForm(props) {
     axios
       .post("https://reqres.in/api/pizzas", formState)
       .then((response) => {
-        props.addPizza(response.data)
+        props.addPizza(response.data);
       })
       .catch((err) => console.log(err));
   };
